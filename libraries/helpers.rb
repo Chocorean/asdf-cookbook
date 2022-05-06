@@ -149,7 +149,8 @@ module Asdf
 
         asdf_script 'install nodejs package dependencies' do
           user asdf_user
-          code 'bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring'
+          # I believe this is not needed anymore for most recent nodejs versions
+          # code 'bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring'
           live_stream new_resource.live_stream
           only_if { ::Dir.exist?("#{asdf_path}/plugins/nodejs") }
         end
